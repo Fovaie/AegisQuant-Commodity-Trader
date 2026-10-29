@@ -16,6 +16,18 @@ Personal use, modification, commercial use and profit-making use are permitted *
 
 This is a custom attribution license; third-party dependencies retain their own licenses. / 本项目采用自定义署名许可证；第三方依赖仍适用各自许可证。
 
+## Screenshots
+
+Actual interface captured in a separate, paused paper environment. The 300 USDT shown is simulated; no private account or API keys are connected. Quotes are a capture-time example, not current prices.
+
+### Strategy workspace overview
+
+![Strategy workspace overview](docs/images/workspace.png)
+
+### XAU/USDT price chart and candle analysis
+
+![XAU/USDT price chart and candle analysis](docs/images/market-analysis.png)
+
 ## Supported markets
 
 | Symbol | Market |

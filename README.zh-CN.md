@@ -16,6 +16,18 @@ Personal use, modification, commercial use and profit-making use are permitted *
 
 This is a custom attribution license; third-party dependencies retain their own licenses. / 本项目采用自定义署名许可证；第三方依赖仍适用各自许可证。
 
+## 软件界面
+
+以下为独立模拟环境中的真实界面截图，策略保持暂停。300 USDT 为模拟资金，未连接私人账户或 API 密钥；行情仅代表截图时点，不是当前报价。
+
+### 策略工作台总览
+
+![策略工作台总览](docs/images/workspace.png)
+
+### XAU/USDT 行情图与 K 线分析
+
+![XAU/USDT 行情图与 K 线分析](docs/images/market-analysis.png)
+
 ## 运行方法
 
 建议 Python 3.11 及以上：
