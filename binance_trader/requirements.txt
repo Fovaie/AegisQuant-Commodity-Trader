@@ -1,0 +1,5 @@
+# Annual Silver Institute reports are parsed locally; bundled into the App.
+pypdf==6.19.0
+# Validate official ChatGPT OAuth ID-token signatures (RS256).
+PyJWT[crypto]==2.15.1
+cryptography==50.0.2

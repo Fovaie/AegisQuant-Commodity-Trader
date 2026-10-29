@@ -1,0 +1,27 @@
+# Private runtime data and local environments
+.env
+.env.*
+!.env.example
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.DS_Store
+data/
+reports/
+logs/
+*.log
+*.sqlite*
+*.db
+*.credentials.json
+*token*.json
+*session*.json
+*.pem
+*.key
+*.p12
+*.pfx
+# Generated desktop and packaging output
+*.app/
+build/
+dist/
+*.spec

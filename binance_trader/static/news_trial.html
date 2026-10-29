@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en"><head><script src="/i18n.js"></script><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="csrf-token" content="__TOKEN__"><title>Luna → Sol 新闻对比试验</title><link rel="stylesheet" href="/style.css"></head>
+<body><main>
+<h1>Luna → Sol 新闻对比试验</h1>
+<p>五品种同批公开资料：直接 Sol 与 Luna 提取 → 按需 Sol 复核。</p>
+<p><strong>独立研究模式 · 未连接交易执行</strong>。此次仅测试新闻处理；原 App 的账户、杠杆和交易设置保持现状。</p>
+<section class="panel"><h2>连接已配置的本机模型网关</h2>
+<p>地址：http://127.0.0.1:8080/v1 · Luna / GPT-6.1 Sol · 两组均采用 low 推理设置。</p>
+<form id="config"><label for="key">模型 API Key（不是币安密钥）</label><input id="key" type="password" autocomplete="off" maxlength="512" required>
+<p>仅保存在试验进程内存，提交后清空输入框；不会写入报告。关闭试验服务后需重填。</p>
+<button class="button primary" type="submit" id="connect">连接并检查 Luna 初筛</button></form>
+<p id="status" role="status">等待填写模型密钥</p>
+<p>连接后先检查一次 Luna，逐条显示错误。点击下方完整对比才会调用 Sol；初筛失败的原文会直接交给 Sol 复核。完整对比最多 1 次 Luna、10 次 Sol，每次最多45秒；无新增或修订不重复调用。费用由模型服务计收。</p>
+<button class="button secondary" id="diagnose" disabled>重新检查 Luna 初筛</button>
+<button class="button secondary" id="run" disabled>运行五品种完整对比</button></section>
+<section class="panel journal"><h2>试验进度</h2><p id="progress">尚未开始</p><p id="luna"></p>
+<ul id="issues"></ul>
+<div class="selection-table"><table><thead><tr><th>品种</th><th>直接 Sol</th><th>Luna → Sol</th><th>方向一致</th><th>复核原因</th></tr></thead><tbody id="results"></tbody></table></div>
+<p id="note">时间从请求开始算到完整响应校验结束，不使用首字延迟；超时会显示为失败。Luna 在五品种间共享，不重复计入总耗时。</p>
+<p>方向一致不代表预测正确。后台按真实时间检查数据是否过期；过期分析只供本次对照，不能生成当前交易许可。当前 1 小时 K线规则保持原状。</p>
+<a id="report" href="/api/report" hidden target="_blank" rel="noopener">查看本次 JSON 报告</a></section>
+</main><script src="/trial.js"></script></body></html>
