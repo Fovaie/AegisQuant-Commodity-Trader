@@ -78,4 +78,4 @@ python -m pip install pyinstaller
 BUILD_PYTHON="$PWD/.venv/bin/python" zsh binance_trader/desktop/build.sh
 ```
 
-输出为 `商品策略交易器.app`，构建产物不随源码发布。本地签名不代表已完成 Apple 公证。详细文件结构见 [英文主页](README.md#project-layout)。第三方依赖、新闻与数据服务仍受其自身许可证和服务条款约束；本项目不是币安官方产品。
+输出为 `AegisQuant Commodity Trader.app`，构建产物不随源码发布。本地签名不代表已完成 Apple 公证。详细文件结构见 [英文主页](README.md#project-layout)。第三方依赖、新闻与数据服务仍受其自身许可证和服务条款约束；本项目不是币安官方产品。

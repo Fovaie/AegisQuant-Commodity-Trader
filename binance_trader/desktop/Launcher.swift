@@ -10,10 +10,10 @@ final class AppDelegate: NSObject, NSApplicationDelegate, WKNavigationDelegate {
     func applicationDidFinishLaunching(_ notification: Notification) {
         let menu = NSMenu(); let item = NSMenuItem(); menu.addItem(item)
         let appMenu = NSMenu(); item.submenu = appMenu
-        appMenu.addItem(withTitle: "Show AegisQuant", action: #selector(showWindow), keyEquivalent: "0")
+        appMenu.addItem(withTitle: "Show AegisQuant Commodity Trader", action: #selector(showWindow), keyEquivalent: "0")
         appMenu.addItem(withTitle: "API Connection Storage…", action: #selector(configureCredentialStorage), keyEquivalent: "")
         appMenu.addItem(.separator())
-        appMenu.addItem(withTitle: "Quit AegisQuant", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q")
+        appMenu.addItem(withTitle: "Quit AegisQuant Commodity Trader", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q")
         let editItem = NSMenuItem(); menu.addItem(editItem)
         let edit = NSMenu(title: "Edit"); editItem.submenu = edit
         edit.addItem(withTitle: "Cut", action: #selector(NSText.cut(_:)), keyEquivalent: "x")
@@ -22,11 +22,11 @@ final class AppDelegate: NSObject, NSApplicationDelegate, WKNavigationDelegate {
         edit.addItem(withTitle: "Select All", action: #selector(NSText.selectAll(_:)), keyEquivalent: "a")
         NSApp.mainMenu = menu
         window = NSWindow(contentRect: NSRect(x: 0,y: 0,width: 1200,height: 820), styleMask: [.titled,.closable,.miniaturizable,.resizable], backing: .buffered, defer: false)
-        window.title = "AegisQuant"; window.minSize = NSSize(width: 800,height: 600)
+        window.title = "AegisQuant Commodity Trader"; window.minSize = NSSize(width: 800,height: 600)
         window.isReleasedWhenClosed = false
         web = WKWebView(); web.navigationDelegate = self; window.contentView = web
         window.center(); showWindow()
-        web.loadHTMLString("<body style='font:22px -apple-system;padding:60px;background:#f4f7f6'>Starting AegisQuant…</body>", baseURL: nil)
+        web.loadHTMLString("<body style='font:22px -apple-system;padding:60px;background:#f4f7f6'>Starting AegisQuant Commodity Trader…</body>", baseURL: nil)
         probe(startIfNeeded: true)
     }
     @objc func showWindow() { window.makeKeyAndOrderFront(nil); NSApp.activate(ignoringOtherApps: true) }
@@ -85,7 +85,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, WKNavigationDelegate {
             try p.run(); backend = p
         } catch { fail("Startup failed: \(error.localizedDescription)") }
     }
-    func fail(_ message: String) { let alert = NSAlert(); alert.messageText = "Unable to Start AegisQuant"; alert.informativeText = message; alert.runModal() }
+    func fail(_ message: String) { let alert = NSAlert(); alert.messageText = "Unable to Start AegisQuant Commodity Trader"; alert.informativeText = message; alert.runModal() }
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
         guard let url = navigationAction.request.url else { decisionHandler(.cancel); return }
         // External links open only after a deliberate click, outside the app.
@@ -97,7 +97,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, WKNavigationDelegate {
     }
     func applicationShouldTerminate(_ sender: NSApplication) -> NSApplication.TerminateReply {
         if let p = backend, p.isRunning {
-            let alert = NSAlert(); alert.messageText = "Quit AegisQuant?"
+            let alert = NSAlert(); alert.messageText = "Quit AegisQuant Commodity Trader?"
             alert.informativeText = "Quitting stops background strategies, simulated stops, and live status monitoring. Confirmed exchange protective orders remain; verify unknown orders at Binance. Close only the window to keep the backend running. New entries remain paused after restart, and unsaved API keys must be entered again."
             alert.addButton(withTitle: "Cancel"); alert.addButton(withTitle: "Quit App")
             if alert.runModal() != .alertSecondButtonReturn { return .terminateCancel }

@@ -81,7 +81,7 @@ python -m pip install pyinstaller
 BUILD_PYTHON="$PWD/.venv/bin/python" zsh binance_trader/desktop/build.sh
 ```
 
-The script creates `商品策略交易器.app`; generated apps and runtime directories are intentionally excluded from this source repository. Local ad-hoc signing does not constitute Apple notarization.
+The script creates `AegisQuant Commodity Trader.app`; generated apps and runtime directories are intentionally excluded from this source repository. Local ad-hoc signing does not constitute Apple notarization.
 
 ## Project layout
 

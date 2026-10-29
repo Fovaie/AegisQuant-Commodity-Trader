@@ -2,7 +2,7 @@
 set -eu
 cd "$(dirname "$0")/../.."
 BUILD_PYTHON="${BUILD_PYTHON:-python3}"
-APP="${COMMODITY_APP_OUTPUT:-$PWD/商品策略交易器.app}"
+APP="${COMMODITY_APP_OUTPUT:-$PWD/AegisQuant Commodity Trader.app}"
 BUILD_DIR="$(mktemp -d /tmp/commodity-build.XXXXXX)"
 xcrun swiftc -swift-version 5 -module-cache-path /private/tmp/commodity-swift-cache binance_trader/desktop/SecureStore.swift -o "$BUILD_DIR/secure-store"
 codesign --force --sign - "$BUILD_DIR/secure-store"
@@ -27,8 +27,8 @@ cat > "$APP/Contents/Info.plist" <<'PLIST'
 <plist version="1.0"><dict>
 <key>CFBundleExecutable</key><string>CommodityTrader</string>
 <key>CFBundleIdentifier</key><string>local.frank.commoditytrader</string>
-<key>CFBundleName</key><string>AegisQuant</string>
-<key>CFBundleDisplayName</key><string>AegisQuant</string>
+<key>CFBundleName</key><string>AegisQuant Commodity Trader</string>
+<key>CFBundleDisplayName</key><string>AegisQuant Commodity Trader</string>
 <key>CFBundlePackageType</key><string>APPL</string>
 <key>CFBundleShortVersionString</key><string>1.0.0</string>
 <key>NSHighResolutionCapable</key><true/>
