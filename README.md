@@ -22,9 +22,9 @@ These macOS **Apple Silicon (arm64)** packages have a traditional, compact tradi
 
 | Edition | Installer |
 | --- | --- |
-| English | [Download English ZIP](https://github.com/Ffffsss123/AegisQuant-Commodity-Trader/releases/download/v1.1.0/AegisQuant-Commodity-Trader-macOS-EN.zip) |
-| 简体中文 | [下载中文版 ZIP](https://github.com/Ffffsss123/AegisQuant-Commodity-Trader/releases/download/v1.1.0/AegisQuant-Commodity-Trader-macOS-ZH-CN.zip) |
-| Verification | [SHA256 checksums](https://github.com/Ffffsss123/AegisQuant-Commodity-Trader/releases/download/v1.1.0/SHA256SUMS.txt) |
+| English | [Download English ZIP](https://github.com/Ffffsss123/AegisQuant-Commodity-Trader/releases/download/v1.1.1/AegisQuant-Commodity-Trader-macOS-EN.zip) |
+| 简体中文 | [下载中文版 ZIP](https://github.com/Ffffsss123/AegisQuant-Commodity-Trader/releases/download/v1.1.1/AegisQuant-Commodity-Trader-macOS-ZH-CN.zip) |
+| Verification | [SHA256 checksums](https://github.com/Ffffsss123/AegisQuant-Commodity-Trader/releases/download/v1.1.1/SHA256SUMS.txt) |
 
 Both editions share the same strategy engine, private data location and localhost port. Run only one at a time; normally quit the other edition first after checking positions. Packaged apps store private runtime data in `~/Library/Application Support/CommodityTrader/`. No keys or trading history are included. Builds are locally signed and not Apple-notarized; macOS may require manual approval. Intel and Windows installers are not included.
 

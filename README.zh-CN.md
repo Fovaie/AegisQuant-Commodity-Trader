@@ -22,9 +22,9 @@ This is a custom attribution license; third-party dependencies retain their own 
 
 | 版本 | 下载 |
 | --- | --- |
-| English | [英文版 ZIP](https://github.com/Ffffsss123/AegisQuant-Commodity-Trader/releases/download/v1.1.0/AegisQuant-Commodity-Trader-macOS-EN.zip) |
-| 简体中文 | [中文版 ZIP](https://github.com/Ffffsss123/AegisQuant-Commodity-Trader/releases/download/v1.1.0/AegisQuant-Commodity-Trader-macOS-ZH-CN.zip) |
-| 完整性校验 | [SHA256 校验值](https://github.com/Ffffsss123/AegisQuant-Commodity-Trader/releases/download/v1.1.0/SHA256SUMS.txt) |
+| English | [英文版 ZIP](https://github.com/Ffffsss123/AegisQuant-Commodity-Trader/releases/download/v1.1.1/AegisQuant-Commodity-Trader-macOS-EN.zip) |
+| 简体中文 | [中文版 ZIP](https://github.com/Ffffsss123/AegisQuant-Commodity-Trader/releases/download/v1.1.1/AegisQuant-Commodity-Trader-macOS-ZH-CN.zip) |
+| 完整性校验 | [SHA256 校验值](https://github.com/Ffffsss123/AegisQuant-Commodity-Trader/releases/download/v1.1.1/SHA256SUMS.txt) |
 
 两版使用相同的交易引擎、本机数据目录和端口，只能同时运行一个版本。换版本前须核对持仓并正常退出原版本。安装包的私人运行数据保存在 `~/Library/Application Support/CommodityTrader/`，安装包不含密钥或交易历史。本地签名未做 Apple 公证，macOS 可能要求人工批准；未提供 Intel 或 Windows 安装包。
 
