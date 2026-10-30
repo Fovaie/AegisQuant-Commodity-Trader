@@ -36,9 +36,6 @@ Actual interface captured in a separate, paused paper environment. The 300 USDT 
 
 ![English fixed-language terminal](docs/images/terminal-en.png)
 
-### 中文版终端
-
-![中文版固定语言终端](docs/images/terminal-zh-CN.png)
 
 ## Supported markets
 
