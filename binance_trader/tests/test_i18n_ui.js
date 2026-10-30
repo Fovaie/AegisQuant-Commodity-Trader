@@ -19,7 +19,7 @@ test('presentation translates dynamic text and attributes without touching input
  const label=node('已暂停');const original=node('黄金 新闻',true);
  const input={nodeType:1,childNodes:[],value:'secret-黄金',attrs:{placeholder:'等待填写模型密钥'},
   matches:()=>false,getAttribute(k){return this.attrs[k]??null},setAttribute(k,v){this.attrs[k]=v}};
- const document={nodeType:9,documentElement:{lang:'zh-CN'},childNodes:[label,original,input]};
+ const document={nodeType:9,documentElement:{lang:'en'},childNodes:[label,original,input]};
  const window={};
  vm.runInNewContext(source,{document,window,MutationObserver:class{constructor(fn){deliver=fn}observe(){}}});
  assert.equal(document.documentElement.lang,'en');
@@ -29,4 +29,10 @@ test('presentation translates dynamic text and attributes without touching input
  const dynamic=node('核对锁定');deliver([{type:'childList',addedNodes:[dynamic]}]);
  assert.equal(dynamic.nodeValue,'Reconciliation lock');
  assert.deepEqual(state,{enabled:true,pending:{kind:'entry'}});
+});
+
+test('Chinese edition preserves its fixed language and does not install the English observer',()=>{
+ const document={documentElement:{lang:'zh-CN'}};let observers=0;
+ vm.runInNewContext(source,{document,MutationObserver:class{constructor(){observers++}}});
+ assert.equal(document.documentElement.lang,'zh-CN');assert.equal(observers,0);
 });

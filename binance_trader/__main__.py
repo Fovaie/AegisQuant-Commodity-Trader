@@ -21,6 +21,8 @@ from .chatgpt_chat import ChatGPTChat, build_context, context_summary
 from .credential_store import CredentialStore, CredentialError, restore_connections, validate_binance_keys
 
 ROOT = Path(__file__).resolve().parent
+EDITION_LANGUAGE = json.loads((ROOT / "static" / "edition.json").read_text())["language"]
+if EDITION_LANGUAGE not in ("en", "zh-CN"): raise ValueError("Invalid installed edition")
 DATA = Path(os.environ["BINANCE_TRADER_DATA"]).expanduser() if os.getenv("BINANCE_TRADER_DATA") else ROOT.parent / "data" / "binance"
 
 
@@ -185,6 +187,7 @@ def server_for(engine, port, readonly=None, analysis=None, runtime=None, chat=No
                         with account_lock:
                             snapshot["readonly_connected"] = readonly is not None
                         snapshot["available_modes"] = [engine.mode]
+                    snapshot['edition_language'] = EDITION_LANGUAGE
                     self.send(200, snapshot)
             elif urlsplit(self.path).path == "/api/analysis":
                 query = parse_qs(urlsplit(self.path).query, keep_blank_values=True)
@@ -200,10 +203,10 @@ def server_for(engine, port, readonly=None, analysis=None, runtime=None, chat=No
                         snapshot = {"kline":{}, "news":{}}
                     snapshot.update(context_id=generation, context_mode=mode)
                 self.send(200, snapshot)
-            elif self.path in ("/", "/app.js", "/chatgpt.js", "/i18n.js", "/style.css"):
+            elif self.path in ("/", "/app.js", "/chatgpt.js", "/i18n.js", "/style.css", "/terminal.js", "/terminal.css"):
                 name = "index.html" if self.path == "/" else self.path[1:]
-                body = (ROOT/"static"/name).read_bytes().replace(b"__TOKEN__", token.encode())
-                mime = {"index.html": "text/html", "app.js": "text/javascript", "chatgpt.js": "text/javascript", "i18n.js": "text/javascript", "style.css": "text/css"}[name]
+                body = (ROOT/"static"/name).read_bytes().replace(b"__TOKEN__", token.encode()).replace(b"__EDITION_LANGUAGE__", EDITION_LANGUAGE.encode())
+                mime = {"index.html": "text/html", "app.js": "text/javascript", "chatgpt.js": "text/javascript", "i18n.js": "text/javascript", "style.css": "text/css", "terminal.js": "text/javascript", "terminal.css": "text/css"}[name]
                 self.send(200, body, mime+"; charset=utf-8")
             else:
                 self.send(404, {"error": "不存在"})

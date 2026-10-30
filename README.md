@@ -16,17 +16,29 @@ Personal use, modification, commercial use and profit-making use are permitted *
 
 This is a custom attribution license; third-party dependencies retain their own licenses. / 本项目采用自定义署名许可证；第三方依赖仍适用各自许可证。
 
+## Install: choose a fixed-language edition
+
+These macOS **Apple Silicon (arm64)** packages have a traditional, compact trading-terminal layout. Download one edition, unzip it and move the `.app` to Applications. There is **no in-app language switch**.
+
+| Edition | Installer |
+| --- | --- |
+| English | [Download English ZIP](https://github.com/Ffffsss123/AegisQuant-Commodity-Trader/releases/download/v1.1.0/AegisQuant-Commodity-Trader-macOS-EN.zip) |
+| 简体中文 | [下载中文版 ZIP](https://github.com/Ffffsss123/AegisQuant-Commodity-Trader/releases/download/v1.1.0/AegisQuant-Commodity-Trader-macOS-ZH-CN.zip) |
+| Verification | [SHA256 checksums](https://github.com/Ffffsss123/AegisQuant-Commodity-Trader/releases/download/v1.1.0/SHA256SUMS.txt) |
+
+Both editions share the same strategy engine, private data location and localhost port. Run only one at a time; normally quit the other edition first after checking positions. Packaged apps store private runtime data in `~/Library/Application Support/CommodityTrader/`. No keys or trading history are included. Builds are locally signed and not Apple-notarized; macOS may require manual approval. Intel and Windows installers are not included.
+
 ## Screenshots
 
 Actual interface captured in a separate, paused paper environment. The 300 USDT shown is simulated; no private account or API keys are connected. Quotes are a capture-time example, not current prices.
 
-### Strategy workspace overview
+### English terminal
 
-![Strategy workspace overview](docs/images/workspace.png)
+![English fixed-language terminal](docs/images/terminal-en.png)
 
-### XAU/USDT price chart and candle analysis
+### 中文版终端
 
-![XAU/USDT price chart and candle analysis](docs/images/market-analysis.png)
+![中文版固定语言终端](docs/images/terminal-zh-CN.png)
 
 ## Supported markets
 
@@ -53,7 +65,7 @@ python -m pip install -r requirements.txt
 python -m binance_trader
 ```
 
-Open **http://127.0.0.1:8766**. First launch uses a local paper ledger and public market data; Binance credentials are not required for paper mode. The interface supports English and Chinese. Configure settings before starting a strategy. Closing the browser does not stop the backend; use Ctrl+C in the terminal. Do not run two processes against the same ledger.
+Open **http://127.0.0.1:8766**. First launch uses a local paper ledger and public market data; Binance credentials are not required for paper mode. The source checkout defaults to English; installed English and Chinese editions have fixed languages. Configure settings before starting a strategy. Closing the browser does not stop the backend; use Ctrl+C in the terminal. Do not run two processes against the same ledger.
 
 Runtime state defaults to `data/binance/`. Set `BINANCE_TRADER_DATA` to use another private directory. Keep this directory out of Git. API keys are entered locally; normal launches keep them in memory. Optional macOS Keychain persistence requires explicit opt-in (`COMMODITY_SAVE_CREDENTIALS=1` or the desktop preference). ChatGPT OAuth has its own local token cache. No credentials, balances, trade histories or downloaded news are distributed here.
 
@@ -90,10 +102,12 @@ To build the macOS app, install Xcode Command Line Tools and PyInstaller in the 
 
 ```sh
 python -m pip install pyinstaller
-BUILD_PYTHON="$PWD/.venv/bin/python" zsh binance_trader/desktop/build.sh
+BUILD_PYTHON="$PWD/.venv/bin/python" zsh binance_trader/desktop/build-editions.sh
 ```
 
-The script creates `AegisQuant Commodity Trader.app`; generated apps and runtime directories are intentionally excluded from this source repository. Local ad-hoc signing does not constitute Apple notarization.
+The script creates the English and Chinese `.app` bundles and ZIP installers in `dist/`; generated apps and runtime directories are intentionally excluded from this source repository. Local ad-hoc signing does not constitute Apple notarization.
+
+To build a single edition: `zsh binance_trader/desktop/build.sh en` or `zsh binance_trader/desktop/build.sh zh-CN`. Language resources are fixed at build time; trading state and input values are not translated.
 
 ## Project layout
 

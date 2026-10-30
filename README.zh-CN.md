@@ -16,17 +16,29 @@ Personal use, modification, commercial use and profit-making use are permitted *
 
 This is a custom attribution license; third-party dependencies retain their own licenses. / 本项目采用自定义署名许可证；第三方依赖仍适用各自许可证。
 
+## 安装：选择固定语言版本
+
+提供 macOS **Apple Silicon（arm64）**安装包，采用传统紧凑交易终端布局。下载其中一个版本，解压后将 `.app` 放入“应用程序”。**软件内不提供中英文切换。**
+
+| 版本 | 下载 |
+| --- | --- |
+| English | [英文版 ZIP](https://github.com/Ffffsss123/AegisQuant-Commodity-Trader/releases/download/v1.1.0/AegisQuant-Commodity-Trader-macOS-EN.zip) |
+| 简体中文 | [中文版 ZIP](https://github.com/Ffffsss123/AegisQuant-Commodity-Trader/releases/download/v1.1.0/AegisQuant-Commodity-Trader-macOS-ZH-CN.zip) |
+| 完整性校验 | [SHA256 校验值](https://github.com/Ffffsss123/AegisQuant-Commodity-Trader/releases/download/v1.1.0/SHA256SUMS.txt) |
+
+两版使用相同的交易引擎、本机数据目录和端口，只能同时运行一个版本。换版本前须核对持仓并正常退出原版本。安装包的私人运行数据保存在 `~/Library/Application Support/CommodityTrader/`，安装包不含密钥或交易历史。本地签名未做 Apple 公证，macOS 可能要求人工批准；未提供 Intel 或 Windows 安装包。
+
 ## 软件界面
 
 以下为独立模拟环境中的真实界面截图，策略保持暂停。300 USDT 为模拟资金，未连接私人账户或 API 密钥；行情仅代表截图时点，不是当前报价。
 
-### 策略工作台总览
+### English terminal
 
-![策略工作台总览](docs/images/workspace.png)
+![English fixed-language terminal](docs/images/terminal-en.png)
 
-### XAU/USDT 行情图与 K 线分析
+### 中文版终端
 
-![XAU/USDT 行情图与 K 线分析](docs/images/market-analysis.png)
+![中文版固定语言终端](docs/images/terminal-zh-CN.png)
 
 ## 运行方法
 
@@ -41,7 +53,7 @@ python -m pip install -r requirements.txt
 python -m binance_trader
 ```
 
-打开 http://127.0.0.1:8766 。首次启动为本地模拟，使用公开行情，无需币安密钥；界面支持中英文。关闭网页不会关闭后台，终端按 Ctrl+C 停止。账本默认保存在 `data/binance/`，可通过 `BINANCE_TRADER_DATA` 指定目录，不能上传到 Git。API 密钥正常情况下仅存内存；macOS 钥匙串保存为可选功能。ChatGPT 登录另有本地令牌缓存。
+打开 http://127.0.0.1:8766 。首次启动为本地模拟，使用公开行情，无需币安密钥；源码默认英文；英文、中文安装包各自固定语言。关闭网页不会关闭后台，终端按 Ctrl+C 停止。账本默认保存在 `data/binance/`，可通过 `BINANCE_TRADER_DATA` 指定目录，不能上传到 Git。API 密钥正常情况下仅存内存；macOS 钥匙串保存为可选功能。ChatGPT 登录另有本地令牌缓存。
 
 ## 品种范围
 
@@ -87,7 +99,9 @@ node --test binance_trader/tests/test_*_ui.js
 
 ```sh
 python -m pip install pyinstaller
-BUILD_PYTHON="$PWD/.venv/bin/python" zsh binance_trader/desktop/build.sh
+BUILD_PYTHON="$PWD/.venv/bin/python" zsh binance_trader/desktop/build-editions.sh
 ```
 
-输出为 `AegisQuant Commodity Trader.app`，构建产物不随源码发布。本地签名不代表已完成 Apple 公证。详细文件结构见 [英文主页](README.md#project-layout)。第三方依赖、新闻与数据服务仍受其自身许可证和服务条款约束；本项目不是币安官方产品。
+输出为 `dist/` 下的英文、中文 `.app` 和 ZIP 安装包，构建产物不随源码发布。本地签名不代表已完成 Apple 公证。详细文件结构见 [英文主页](README.md#project-layout)。第三方依赖、新闻与数据服务仍受其自身许可证和服务条款约束；本项目不是币安官方产品。
+
+仅构建单一版本：`zsh binance_trader/desktop/build.sh en` 或 `zsh binance_trader/desktop/build.sh zh-CN`。语言在打包时固定，不转换交易状态或表单数值。

@@ -1,7 +1,14 @@
 /* English presentation layer; does not mutate trading state or form values. */
 (()=>{
   "use strict";
+  if(typeof document!=="undefined" && document.documentElement.lang==="zh-CN")return;
   const messages = {
+  "请先连接模拟环境的只读API，以读取账户费率和保证金档位": "Connect a read-only API in paper mode to read account fees and margin brackets",
+  "新闻风险或因素覆盖字段不完整，暂停新开仓": "News risk or factor coverage is incomplete; new entries paused",
+  "本品种行情未就绪或读取失败": "Market data for this instrument is not ready or failed to load",
+  "相关新闻方向尚未确认，仅作参考；按已收盘K线突破与风控判断": "News direction is unconfirmed; evaluate closed-candle breakouts and risk checks",
+  "新闻方向证据不足，改由已收盘K线突破与风控判断": "Insufficient news direction; evaluate closed-candle breakouts and risk checks",
+
   "等待填写模型密钥": "Enter a model API key",
   "已填写，准备试验": "Key entered; ready to test",
   "试验进行中": "Test running",
@@ -1079,7 +1086,9 @@
     if (typeof value !== 'string' || !/[\u3400-\u9fff]/.test(value)) return value;
     // The dictionary affects presentation only; API values and trading state stay intact.
     return value.replace(expression, key=>messages[key])
-      .replace(/(\d)分钟/g,'$1 min').replace(/(\d)小时/g,'$1 hour');
+      .replace(/等待下一根(1 hour|\d+ min)K线结束；仅在收盘后(\d+)秒内评估开仓/g,'Wait for the next $1 candle close; evaluate entries within $2 seconds after close')
+      .replace(/(\d)分钟/g,'$1 min').replace(/(\d)小时/g,'$1 hour')
+      .replace(/等待下一根(1 hour|\d+ min)K线结束；仅在收盘后(\d+)秒内评估开仓/g,'Wait for the next $1 candle close; evaluate entries within $2 seconds after close');
   }
   function visit(root) {
     if (!root) return;
