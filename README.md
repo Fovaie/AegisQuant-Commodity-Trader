@@ -6,13 +6,13 @@ A local Python strategy terminal and optional macOS desktop app for **Binance US
 
 ## Copyright, commercial use & attribution / 版权、商业使用与来源标注
 
-**Copyright © 2026 Frankie (GitHub: Ffffsss123).** Rights in original project code are reserved except as expressly licensed in [LICENSE](LICENSE).
+**Copyright © 2026 Frankie (GitHub: Fovaie).** Rights in original project code are reserved except as expressly licensed in [LICENSE](LICENSE).
 
-Personal use, modification, commercial use and profit-making use are permitted **only with the required attribution**. Preserve the copyright notice and license; clearly state that the original project comes from **[Ffffsss123/AegisQuant-Commodity-Trader](https://github.com/Ffffsss123/AegisQuant-Commodity-Trader)**. Modified versions must identify their changes and must not claim to be the original author's release. Distributed products and services must display this credit and link in their README/documentation and user-accessible About/Credits page (or equivalent). Internal/private users must retain the notice and source link in their copy. Attribution does not imply endorsement. Unauthorized removal of attribution or other license violations may result in legal action; the author reserves the right to seek remedies available under applicable law.
+Personal use, modification, commercial use and profit-making use are permitted **only with the required attribution**. Preserve the copyright notice and license; clearly state that the original project comes from **[Fovaie/AegisQuant-Commodity-Trader](https://github.com/Fovaie/AegisQuant-Commodity-Trader)**. Modified versions must identify their changes and must not claim to be the original author's release. Distributed products and services must display this credit and link in their README/documentation and user-accessible About/Credits page (or equivalent). Internal/private users must retain the notice and source link in their copy. Attribution does not imply endorsement. Unauthorized removal of attribution or other license violations may result in legal action; the author reserves the right to seek remedies available under applicable law.
 
-**版权所有 © 2026 Frankie（GitHub：Ffffsss123）。** 原创项目代码除 [LICENSE](LICENSE) 明确授予的权利外，其余权利保留。
+**版权所有 © 2026 Frankie（GitHub：Fovaie）。** 原创项目代码除 [LICENSE](LICENSE) 明确授予的权利外，其余权利保留。
 
-允许个人使用、个人改写、商业使用及盈利使用，**前提是必须保留版权和许可证，明确注明原项目来自 [Ffffsss123/AegisQuant-Commodity-Trader](https://github.com/Ffffsss123/AegisQuant-Commodity-Trader) 并附可访问链接**。修改版必须说明修改情况，不得冒充原作者发布。对外分发的产品或服务，须在 README／说明文档和用户可见的“关于／致谢”或同等页面标注来源；内部或私人使用也须在副本中保留声明和来源链接。标注来源不代表作者背书。擅自删除署名、隐瞒来源或违反许可证的，作者保留依法追究责任、提起诉讼并寻求法律救济的权利。
+允许个人使用、个人改写、商业使用及盈利使用，**前提是必须保留版权和许可证，明确注明原项目来自 [Fovaie/AegisQuant-Commodity-Trader](https://github.com/Fovaie/AegisQuant-Commodity-Trader) 并附可访问链接**。修改版必须说明修改情况，不得冒充原作者发布。对外分发的产品或服务，须在 README／说明文档和用户可见的“关于／致谢”或同等页面标注来源；内部或私人使用也须在副本中保留声明和来源链接。标注来源不代表作者背书。擅自删除署名、隐瞒来源或违反许可证的，作者保留依法追究责任、提起诉讼并寻求法律救济的权利。
 
 This is a custom attribution license; third-party dependencies retain their own licenses. / 本项目采用自定义署名许可证；第三方依赖仍适用各自许可证。
 
@@ -22,9 +22,9 @@ These macOS **Apple Silicon (arm64)** packages have a traditional, compact tradi
 
 | Edition | Installer |
 | --- | --- |
-| English | [Download English ZIP](https://github.com/Ffffsss123/AegisQuant-Commodity-Trader/releases/download/v1.1.1/AegisQuant-Commodity-Trader-macOS-EN.zip) |
-| 简体中文 | [下载中文版 ZIP](https://github.com/Ffffsss123/AegisQuant-Commodity-Trader/releases/download/v1.1.1/AegisQuant-Commodity-Trader-macOS-ZH-CN.zip) |
-| Verification | [SHA256 checksums](https://github.com/Ffffsss123/AegisQuant-Commodity-Trader/releases/download/v1.1.1/SHA256SUMS.txt) |
+| English | [Download English ZIP](https://github.com/Fovaie/AegisQuant-Commodity-Trader/releases/download/v1.1.1/AegisQuant-Commodity-Trader-macOS-EN.zip) |
+| 简体中文 | [下载中文版 ZIP](https://github.com/Fovaie/AegisQuant-Commodity-Trader/releases/download/v1.1.1/AegisQuant-Commodity-Trader-macOS-ZH-CN.zip) |
+| Verification | [SHA256 checksums](https://github.com/Fovaie/AegisQuant-Commodity-Trader/releases/download/v1.1.1/SHA256SUMS.txt) |
 
 Both editions share the same strategy engine, private data location and localhost port. Run only one at a time; normally quit the other edition first after checking positions. Packaged apps store private runtime data in `~/Library/Application Support/CommodityTrader/`. No keys or trading history are included. Builds are locally signed and not Apple-notarized; macOS may require manual approval. Intel and Windows installers are not included.
 
@@ -54,7 +54,7 @@ These are exchange-listed USDT-margined derivatives, not physical commodity purc
 Use Python 3.11 or later and a virtual environment:
 
 ```sh
-git clone https://github.com/Ffffsss123/AegisQuant-Commodity-Trader.git
+git clone https://github.com/Fovaie/AegisQuant-Commodity-Trader.git
 cd AegisQuant-Commodity-Trader
 python3 -m venv .venv
 source .venv/bin/activate

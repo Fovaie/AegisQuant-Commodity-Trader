@@ -6,13 +6,13 @@
 
 ## Copyright, commercial use & attribution / 版权、商业使用与来源标注
 
-**Copyright © 2026 Frankie (GitHub: Ffffsss123).** Rights in original project code are reserved except as expressly licensed in [LICENSE](LICENSE).
+**Copyright © 2026 Frankie (GitHub: Fovaie).** Rights in original project code are reserved except as expressly licensed in [LICENSE](LICENSE).
 
-Personal use, modification, commercial use and profit-making use are permitted **only with the required attribution**. Preserve the copyright notice and license; clearly state that the original project comes from **[Ffffsss123/AegisQuant-Commodity-Trader](https://github.com/Ffffsss123/AegisQuant-Commodity-Trader)**. Modified versions must identify their changes and must not claim to be the original author's release. Distributed products and services must display this credit and link in their README/documentation and user-accessible About/Credits page (or equivalent). Internal/private users must retain the notice and source link in their copy. Attribution does not imply endorsement. Unauthorized removal of attribution or other license violations may result in legal action; the author reserves the right to seek remedies available under applicable law.
+Personal use, modification, commercial use and profit-making use are permitted **only with the required attribution**. Preserve the copyright notice and license; clearly state that the original project comes from **[Fovaie/AegisQuant-Commodity-Trader](https://github.com/Fovaie/AegisQuant-Commodity-Trader)**. Modified versions must identify their changes and must not claim to be the original author's release. Distributed products and services must display this credit and link in their README/documentation and user-accessible About/Credits page (or equivalent). Internal/private users must retain the notice and source link in their copy. Attribution does not imply endorsement. Unauthorized removal of attribution or other license violations may result in legal action; the author reserves the right to seek remedies available under applicable law.
 
-**版权所有 © 2026 Frankie（GitHub：Ffffsss123）。** 原创项目代码除 [LICENSE](LICENSE) 明确授予的权利外，其余权利保留。
+**版权所有 © 2026 Frankie（GitHub：Fovaie）。** 原创项目代码除 [LICENSE](LICENSE) 明确授予的权利外，其余权利保留。
 
-允许个人使用、个人改写、商业使用及盈利使用，**前提是必须保留版权和许可证，明确注明原项目来自 [Ffffsss123/AegisQuant-Commodity-Trader](https://github.com/Ffffsss123/AegisQuant-Commodity-Trader) 并附可访问链接**。修改版必须说明修改情况，不得冒充原作者发布。对外分发的产品或服务，须在 README／说明文档和用户可见的“关于／致谢”或同等页面标注来源；内部或私人使用也须在副本中保留声明和来源链接。标注来源不代表作者背书。擅自删除署名、隐瞒来源或违反许可证的，作者保留依法追究责任、提起诉讼并寻求法律救济的权利。
+允许个人使用、个人改写、商业使用及盈利使用，**前提是必须保留版权和许可证，明确注明原项目来自 [Fovaie/AegisQuant-Commodity-Trader](https://github.com/Fovaie/AegisQuant-Commodity-Trader) 并附可访问链接**。修改版必须说明修改情况，不得冒充原作者发布。对外分发的产品或服务，须在 README／说明文档和用户可见的“关于／致谢”或同等页面标注来源；内部或私人使用也须在副本中保留声明和来源链接。标注来源不代表作者背书。擅自删除署名、隐瞒来源或违反许可证的，作者保留依法追究责任、提起诉讼并寻求法律救济的权利。
 
 This is a custom attribution license; third-party dependencies retain their own licenses. / 本项目采用自定义署名许可证；第三方依赖仍适用各自许可证。
 
@@ -22,9 +22,9 @@ This is a custom attribution license; third-party dependencies retain their own 
 
 | 版本 | 下载 |
 | --- | --- |
-| English | [英文版 ZIP](https://github.com/Ffffsss123/AegisQuant-Commodity-Trader/releases/download/v1.1.1/AegisQuant-Commodity-Trader-macOS-EN.zip) |
-| 简体中文 | [中文版 ZIP](https://github.com/Ffffsss123/AegisQuant-Commodity-Trader/releases/download/v1.1.1/AegisQuant-Commodity-Trader-macOS-ZH-CN.zip) |
-| 完整性校验 | [SHA256 校验值](https://github.com/Ffffsss123/AegisQuant-Commodity-Trader/releases/download/v1.1.1/SHA256SUMS.txt) |
+| English | [英文版 ZIP](https://github.com/Fovaie/AegisQuant-Commodity-Trader/releases/download/v1.1.1/AegisQuant-Commodity-Trader-macOS-EN.zip) |
+| 简体中文 | [中文版 ZIP](https://github.com/Fovaie/AegisQuant-Commodity-Trader/releases/download/v1.1.1/AegisQuant-Commodity-Trader-macOS-ZH-CN.zip) |
+| 完整性校验 | [SHA256 校验值](https://github.com/Fovaie/AegisQuant-Commodity-Trader/releases/download/v1.1.1/SHA256SUMS.txt) |
 
 两版使用相同的交易引擎、本机数据目录和端口，只能同时运行一个版本。换版本前须核对持仓并正常退出原版本。安装包的私人运行数据保存在 `~/Library/Application Support/CommodityTrader/`，安装包不含密钥或交易历史。本地签名未做 Apple 公证，macOS 可能要求人工批准；未提供 Intel 或 Windows 安装包。
 
@@ -45,7 +45,7 @@ This is a custom attribution license; third-party dependencies retain their own 
 建议 Python 3.11 及以上：
 
 ```sh
-git clone https://github.com/Ffffsss123/AegisQuant-Commodity-Trader.git
+git clone https://github.com/Fovaie/AegisQuant-Commodity-Trader.git
 cd AegisQuant-Commodity-Trader
 python3 -m venv .venv
 source .venv/bin/activate
